@@ -87,9 +87,6 @@ SSH into the control node and follow the steps below:
 - Update the hosts file to include the IP addresses of the target machines.
 - Run the playbook, and navigate to Kibana to check that the installation worked as expected.
 
-_TODO: Answer the following questions to fill in the blanks:_
-- _Which file is the playbook? Where do you copy it?_
-- _Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?_
-- _Which URL do you navigate to in order to check that the ELK server is running?
-
-_As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
+- filebeat-playbook.yml is the playbook, and the directory it should be copied to in the container is /etc/ansible/
+- /etc/ansible/hosts should be edited with the IP addresses of the machines you wish to target. Use different headers in this file for the groups getting different software installed (ELK vs. Filebeat).
+- The URL to make sure the installation is running is http://[IP]:5601/app/kibana where IP is the private IP of the Elk server that the provisioner can access.
